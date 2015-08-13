@@ -41,8 +41,8 @@ public class App
         try {
             br = new BufferedReader(new FileReader(args[0]));
             while ((msgLine = br.readLine()) != null) {
-                myTextProducer.sendMessage("App", msgLine);
                 count++;
+				myTextProducer.sendMessage(Integer.toString(count), msgLine);
             }
         } catch(Exception ex) {
 			logger.debug("Exception while sending message: " + ex.toString());
