@@ -37,13 +37,15 @@ public class App
 
         BufferedReader br = null;
         String msgLine = "";
+        int count = 0;
         try {
             br = new BufferedReader(new FileReader(args[0]));
             while ((msgLine = br.readLine()) != null) {
                 myTextProducer.sendMessage("App", msgLine);
+                count++;
             }
         } catch(Exception ex) {
-
+			logger.debug("Exception while sending message: " + ex.toString());
         } finally {
             try {
                 if (br != null) br.close();
@@ -51,5 +53,7 @@ public class App
                 ex.printStackTrace();
             }
         }
+
+        logger.info("Published " + count + " message(s) to Kafka");
     }
 }
