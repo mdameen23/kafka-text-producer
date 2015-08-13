@@ -31,4 +31,8 @@ public class TextProducer {
         KeyedMessage<String, String> data = new KeyedMessage<String, String>(TopicID, msgKey, msg);
         myKafkaProducer.send(data);
     }
+
+	public void close() {
+		myKafkaProducer.close();
+	}
 }

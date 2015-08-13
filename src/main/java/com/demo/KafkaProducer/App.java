@@ -55,5 +55,6 @@ public class App
         }
 
         logger.info("Published " + count + " message(s) to Kafka");
+		myTextProducer.close();
     }
 }
