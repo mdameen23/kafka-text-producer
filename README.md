@@ -15,10 +15,10 @@ This project was run on the MapR sandbox.
 
 * Setup Kafka on the sandbox
 
-The following link provides information on setting up Kafka
+	The following link provides information on setting up Kafka
     http://kafka.apache.org/07/quickstart.html
 	
-or download and install from
+	or download and install from
     http://mirror.cogentco.com/pub/apache/kafka/0.8.1.1/kafka_2.10-0.8.1.1.tgz
 
 * Clone the git repos locally
@@ -28,13 +28,13 @@ or download and install from
 
 * Start a Kafka server
 
-Kafka was installed to /opt/kafka/
+	Kafka was installed to /opt/kafka/
 
     bin/kafka-server-start.sh config/server.properties > logs/kafka-server.log 2>&1 &
 
 * Create the Kafka topic
 
-The topic used in the code is "TextStream"
+	The topic used in the code is "TextStream"
 
     bin/kafka-topics.sh --zookeeper maprdemo:5181 --create --topic TextStream --partitions 1 --replication-factor 1
 
